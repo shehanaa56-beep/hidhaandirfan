@@ -1,0 +1,96 @@
+.curtainWrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 90; /* Just below the envelope if it was still there */
+  pointer-events: none;
+  display: flex;
+  overflow: hidden;
+}
+
+.curtainLeft, .curtainRight {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background: linear-gradient(90deg, #B8D8E8 0%, #D6EEF8 40%, #FFFFFF 60%, #B8D8E8 100%);
+  background-size: 200% 100%;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+/* Add some texture to the curtain */
+.curtainLeft::before, .curtainRight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent 10px,
+    rgba(0,0,0,0.1) 10px,
+    rgba(0,0,0,0.1) 20px
+  );
+  opacity: 0.5;
+}
+
+/* Folds for realism */
+.curtainLeft::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background: linear-gradient(to left, rgba(0,0,0,0.4), transparent);
+}
+
+.curtainRight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
+}
+
+.curtainLeft {
+  left: 0;
+  transform-origin: top left;
+}
+
+.curtainRight {
+  right: 0;
+  transform-origin: top right;
+}
+
+.chandelierContainer {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 95;
+}
+
+.chandelier {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 20px 30px rgba(126, 200, 227, 0.6));
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(126, 200, 227, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulseGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.9); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}

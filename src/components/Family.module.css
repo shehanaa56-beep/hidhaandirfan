@@ -1,0 +1,193 @@
+.section {
+  min-height: 100vh;
+  padding: 30px 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* Floral rose stripe background */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/floral_stripe_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.archCard {
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--bg-soft-ivory);
+  border: 1px solid rgba(126, 200, 227, 0.45);
+  border-top-left-radius: 160px;
+  border-top-right-radius: 160px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 60px 30px 50px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(44, 122, 140, 0.12);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .archCard {
+    padding: 45px 20px 35px;
+    border-top-left-radius: 140px;
+    border-top-right-radius: 140px;
+  }
+  .bismillahArabic {
+    font-size: 1.85rem;
+  }
+  .bismillahEnglish {
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+  }
+  .intro {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+  }
+  .familyBlock {
+    margin-bottom: 15px;
+  }
+  .parents {
+    font-size: 1.45rem !important;
+  }
+  .andFamily {
+    font-size: 0.7rem;
+  }
+  .joinedWith {
+    margin: 20px 0;
+    font-size: 1.05rem;
+  }
+}
+
+/* Inner ice-blue border */
+.archCard::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px dashed rgba(126, 200, 227, 0.6);
+  border-top-left-radius: 152px;
+  border-top-right-radius: 152px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  pointer-events: none;
+}
+
+/* Corner ornaments */
+.archCard::after {
+  content: "❧";
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  color: var(--green-forest);
+  font-size: 1.2rem;
+  transform: rotate(180deg);
+}
+
+.archCardDecoration {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  color: var(--green-forest);
+  font-size: 1.2rem;
+}
+
+.bismillahArabic {
+  font-family: var(--font-serif-primary);
+  font-size: 1.6rem;
+  color: var(--green-forest);
+  margin-bottom: 5px;
+}
+
+.bismillahEnglish {
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-dark-taupe);
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.intro {
+  font-family: var(--font-serif-secondary);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-dark-taupe);
+  opacity: 0.8;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.familyBlock {
+  margin-bottom: 20px;
+}
+
+.parents {
+  font-family: var(--font-serif-primary);
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #1A5568 0%, #2C7A8C 50%, #1A5568 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.andFamily {
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dark-taupe);
+  opacity: 0.6;
+}
+
+.joinedWith {
+  font-family: var(--font-serif-secondary);
+  font-size: 0.8rem;
+  color: var(--text-dark-taupe);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.joinedWith::before,
+.joinedWith::after {
+  content: "";
+  height: 1px;
+  width: 40px;
+  background: linear-gradient(to right, transparent, var(--text-dark-taupe), transparent);
+  opacity: 0.4;
+}
+
+.joinedWith::before {
+  margin-right: 15px;
+}
+
+.joinedWith::after {
+  margin-left: 15px;
+}

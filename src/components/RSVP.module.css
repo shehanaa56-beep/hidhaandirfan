@@ -1,0 +1,294 @@
+.section {
+  min-height: 100vh;
+  padding: 30px 15px;
+  background-color: var(--bg-champagne-cream); /* Unified theme background */
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-cursive);
+  font-size: 3.4rem;
+  color: var(--text-warm-brown);
+  margin-bottom: 5px;
+  line-height: 1.1;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px auto 20px;
+  width: 100%;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  max-width: 90px;
+}
+
+.separator::before {
+  margin-right: 15px;
+  background: linear-gradient(to left, var(--primary-muted-gold), transparent);
+}
+
+.separator::after {
+  margin-left: 15px;
+  background: linear-gradient(to right, var(--primary-muted-gold), transparent);
+}
+
+.separatorSvg {
+  color: var(--primary-muted-gold);
+  opacity: 0.85;
+}
+
+.form {
+  width: 100%;
+  max-width: 380px; /* Narrower, more compact layout like screenshot */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Reduced vertical gaps */
+  text-align: left;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font-serif-primary);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-warm-brown);
+  opacity: 0.85;
+  font-weight: 500;
+  margin-bottom: 4px;
+  padding-left: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 9px 16px;
+  border: 1px solid rgba(126, 200, 227, 0.4);
+  background-color: rgba(240, 248, 253, 0.85);
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-warm-brown);
+  transition: var(--transition-smooth);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-muted-gold);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(126, 200, 227, 0.25);
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid rgba(126, 200, 227, 0.4);
+  background-color: rgba(240, 248, 253, 0.85);
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-warm-brown);
+  transition: var(--transition-smooth);
+  resize: vertical;
+  min-height: 50px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary-muted-gold);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(126, 200, 227, 0.25);
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  margin-top: 6px;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-dark-taupe);
+  cursor: pointer;
+  user-select: none;
+}
+
+.radioInput {
+  display: none;
+}
+
+.customRadio {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(126, 200, 227, 0.5);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.radioInput:checked + .customRadio {
+  border-color: var(--primary-muted-gold);
+  box-shadow: 0 0 8px rgba(126, 200, 227, 0.3);
+}
+
+.customRadio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.radioInput:checked + .customRadio::after {
+  transform: scale(1);
+}
+
+/* Card-style attend options */
+.attendCards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.attendCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(138, 180, 196, 0.45);
+  border-radius: 10px;
+  background: rgba(240, 248, 253, 0.85);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.attendCard:hover {
+  border-color: var(--green-forest);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.attendCardActive {
+  border-color: var(--green-forest);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(44, 122, 140, 0.12);
+}
+
+.attendRadio {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgba(138, 180, 196, 0.7);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.attendCardActive .attendRadio {
+  border-color: var(--green-forest);
+}
+
+.attendCardActive .attendRadio::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green-forest);
+  position: absolute;
+}
+
+.attendText {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark-taupe);
+}
+
+.submitBtn {
+  margin: 10px auto 0;
+  width: auto;
+  min-width: 155px;
+  background-color: #2C7A8C;
+  color: #fff;
+  border: none;
+  padding: 9px 26px;
+  font-family: var(--font-serif-primary);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(44, 122, 140, 0.2);
+  transition: var(--transition-smooth);
+  text-align: center;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: #1A5568;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(44, 122, 140, 0.35);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success {
+  color: #1A5568;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.error {
+  color: #D32F2F;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin: 5px 0;
+  text-align: center;
+}

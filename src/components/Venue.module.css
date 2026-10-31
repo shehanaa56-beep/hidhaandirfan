@@ -1,0 +1,132 @@
+.section {
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Ice blue floral background */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/icy_blue_scalloped_frame.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background: var(--bg-champagne-cream);
+  border-radius: var(--border-radius-md);
+  padding: 25px;
+  box-shadow: 0 15px 40px rgba(44, 122, 140, 0.15);
+  border: 1px solid rgba(126, 200, 227, 0.45);
+  position: relative;
+}
+
+/* Inner ice-blue border */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px dashed rgba(138, 180, 196, 0.5);
+  border-radius: calc(var(--border-radius-md) - 6px);
+  pointer-events: none;
+}
+
+
+
+.mapWrap {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  border: 2px solid var(--green-sage-light);
+  position: relative;
+  z-index: 2;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.venueName {
+  font-family: var(--font-serif-primary);
+  font-size: 1.5rem;
+  color: var(--green-deep);
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 2;
+}
+
+.address {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark-taupe);
+  margin-bottom: 25px;
+  opacity: 0.85;
+  position: relative;
+  z-index: 2;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 400px) {
+  .btns {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 15px;
+  }
+  .mapWrap {
+    height: 160px;
+    margin-bottom: 15px;
+  }
+  .venueName {
+    font-size: 1.6rem;
+  }
+  .address {
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+  }
+  .btns {
+    gap: 8px;
+  }
+}

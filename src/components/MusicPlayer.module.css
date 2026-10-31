@@ -1,0 +1,85 @@
+.player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mainBtn {
+  width: 50px;
+  height: 50px;
+  background: var(--gold-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-gold);
+  border: 2px solid var(--bg-soft-ivory);
+  transition: var(--transition-smooth);
+}
+
+.mainBtn:hover {
+  transform: scale(1.05);
+}
+
+.disc {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-soft-ivory);
+  animation: spin 4s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text-warm-brown);
+}
+
+.discInner {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-champagne-gold);
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.controls {
+  background: rgba(234, 244, 251, 0.95);
+  backdrop-filter: blur(5px);
+  padding: 10px 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+}
+
+.controlBtn {
+  background: transparent;
+  border: none;
+  color: var(--primary-muted-gold);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.controlBtn:hover {
+  color: var(--primary-champagne-gold);
+  transform: scale(1.1);
+}
+
+.volumeSlider {
+  width: 60px;
+  accent-color: var(--primary-muted-gold);
+  cursor: pointer;
+}

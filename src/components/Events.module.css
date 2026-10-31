@@ -1,0 +1,183 @@
+.section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background-image: url('/images/icy_blue_floral_washi_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Quranic verse */
+.verseBlock {
+  text-align: center;
+  margin-bottom: 4px;
+  padding: 0 10px;
+}
+
+.verseArabic {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #C9E8F5;
+  direction: rtl;
+  text-align: center;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.verseSeparator {
+  width: 100px;
+  height: 1px;
+  background: rgba(201, 232, 245, 0.5);
+  margin: 18px auto 28px;
+}
+
+/* Soft overlay so text stays readable */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 48, 60, 0.25);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Override global section-subtitle & section-title for white on green bg */
+.section :global(.section-subtitle) {
+  color: rgba(201, 232, 245, 0.95);
+  letter-spacing: 4px;
+}
+
+.section :global(.section-title) {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+.section :global(.gold-separator)::before,
+.section :global(.gold-separator)::after {
+  background: rgba(201, 232, 245, 0.6);
+}
+
+.section :global(.gold-separator-icon) {
+  color: rgba(201, 232, 245, 0.85);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 360px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Elegant text block (no box) ── */
+.eventBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.eventLabel {
+  font-family: var(--font-serif-primary);
+  font-size: 0.65rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(201, 232, 245, 0.85);
+  margin-bottom: 4px;
+}
+
+.eventName {
+  font-family: var(--font-cursive);
+  font-size: 3.8rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.3);
+  margin: 0;
+}
+
+.dividerLine {
+  width: 80px;
+  height: 1px;
+  background: rgba(201, 232, 245, 0.6);
+  margin: 10px auto;
+}
+
+.eventDate {
+  font-family: var(--font-serif-primary);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #C9E8F5;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+}
+
+.eventTime {
+  font-family: var(--font-serif-secondary);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.25);
+}
+
+.dividerDots {
+  font-size: 1.2rem;
+  color: rgba(201, 232, 245, 0.7);
+  letter-spacing: 6px;
+  margin: 4px 0;
+}
+
+.eventVenue {
+  font-family: var(--font-serif-primary);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  max-width: 280px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 480px) {
+  .verseArabic {
+    font-size: 1.15rem;
+    white-space: normal;
+    word-break: keep-all;
+    line-height: 1.8;
+  }
+  .eventLabel {
+    font-size: 0.85rem;
+    letter-spacing: 6px;
+  }
+  .eventName {
+    font-size: 3.4rem;
+  }
+  .eventDate {
+    font-size: 1.05rem;
+    letter-spacing: 4px;
+  }
+  .eventTime {
+    font-size: 1.45rem;
+  }
+  .eventVenue {
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    max-width: 320px;
+  }
+}

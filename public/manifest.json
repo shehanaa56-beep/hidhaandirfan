@@ -1,0 +1,17 @@
+{
+  "short_name": "Nikkah",
+  "name": "Nikkah Ceremony Invitation - Hidha & Irfan",
+  "icons": [
+    {
+      "src": "/images/dreamy_ice_blue_wedding_dance.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#EAF4FB",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#1A5568"
+}

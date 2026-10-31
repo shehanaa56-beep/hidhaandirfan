@@ -1,0 +1,56 @@
+.movingSlider {
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--bg-soft-ivory);
+  padding: 1.2rem 0;
+  border-top: 1px solid rgba(126, 200, 227, 0.3);
+  border-bottom: 1px solid rgba(126, 200, 227, 0.3);
+  position: relative;
+  z-index: 5;
+}
+
+.movingTrack {
+  display: flex;
+  width: max-content;
+  animation: scroll 60s linear infinite; /* Smooth slow panning speed */
+}
+
+/* Pause scroll animation on hover so guests can view the photos */
+.movingSlider:hover .movingTrack {
+  animation-play-state: paused;
+}
+
+.movingImage {
+  width: 170px;
+  height: 250px;
+  object-fit: cover;
+  margin-right: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(126, 200, 227, 0.4);
+  box-shadow: 0 4px 10px rgba(44, 122, 140, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.movingImage:hover {
+  transform: scale(1.02);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .movingSlider {
+    padding: 0.8rem 0;
+  }
+  .movingImage {
+    width: 130px;
+    height: 190px;
+    margin-right: 8px;
+  }
+}

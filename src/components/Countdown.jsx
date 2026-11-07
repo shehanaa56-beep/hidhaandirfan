@@ -36,7 +36,7 @@ const Card = ({ value, label, index }) => (
 );
 
 export default function Countdown({ settings }) {
-  const time = useCountdown(settings?.weddingDate || '2026-12-05T11:30:00');
+  const time = useCountdown(settings?.weddingDate || '2026-12-05T10:30:00');
   return (
     <section className={styles.section} id="countdown">
       <motion.p className="section-subtitle" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>

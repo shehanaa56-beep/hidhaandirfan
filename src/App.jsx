@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, useSearchParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion';
 
 import Envelope from './components/Envelope';
-import Curtains from './components/Curtains';
 import Hero from './components/Hero';
 import Countdown from './components/Countdown';
 
@@ -52,9 +51,8 @@ function InvitationPage() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.1 }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
           >
-            <Curtains />
             <Hero settings={settings} guestName={guestName} />
             <Countdown settings={settings} />
             <Family settings={settings} />

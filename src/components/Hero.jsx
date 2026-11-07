@@ -11,7 +11,7 @@ const fadeUp = {
 };
 
 export default function Hero({ settings, guestName }) {
-  const dateObj = new Date(settings?.weddingDate || '2026-12-05T11:30:00');
+  const dateObj = new Date(settings?.weddingDate || '2026-12-05T10:30:00');
   
   // Format the date to show like: "DECEMBER 12, 2026" or with "TH" suffix
   const month = dateObj.toLocaleDateString('en-US', { month: 'long' }).toUpperCase();

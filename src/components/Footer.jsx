@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
 
 export default function Footer({ settings }) {
-  const date = new Date(settings?.weddingDate || '2026-12-05T11:30:00');
+  const date = new Date(settings?.weddingDate || '2026-12-05T10:30:00');
   const d = String(date.getDate()).padStart(2, '0');
   const m = String(date.getMonth() + 1).padStart(2, '0');
   const y = date.getFullYear();

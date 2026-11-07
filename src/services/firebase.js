@@ -28,7 +28,7 @@ const db = getFirestore(app);
 const DEFAULT_SETTINGS = {
   brideName: "Hidha",
   groomName: "Irfan",
-  weddingDate: "2026-12-05T11:30:00",
+  weddingDate: "2026-12-05T10:30:00",
   brideParents: "Sulaikha & Aboobacker",
   groomParents: "Ansar & Fousiya",
   brideTagline: "Daughter of Sulaikha & Aboobacker",
@@ -39,7 +39,7 @@ const DEFAULT_SETTINGS = {
   venueAddress: "Valanchery - Nilambur Road, Puthanangadi, Kerala",
   venueMapsUrl: "https://maps.app.goo.gl/kU1DaaKoNcvSTHYY9?g_st=iw",
   events: [
-    { id: "nikkah", name: "Nikkah Ceremony", icon: "heart", date: "Saturday, December 5, 2026", time: "11:30 AM – 2:00 PM", venue: "JB Lawns Auditorium, Puthanangadi" },
+    { id: "nikkah", name: "Nikkah Ceremony", icon: "heart", date: "Saturday, December 5, 2026", time: "10:30 AM", venue: "JB Lawns Auditorium, Puthanangadi" },
   ],
   bankAccount: "Hidha",
   bankName: "",
@@ -138,9 +138,13 @@ export async function getSettings() {
   const hasOldEvent = settings.events?.some(
     e => e.name === "Wedding" || e.id === "wedding" || e.venue?.includes("Msp")
   );
+  const hasOldTime = 
+    settings.weddingDate?.includes("11:30") || 
+    settings.events?.some(e => e.time?.includes("11:30"));
   if (
     hasOldNames ||
     hasOldDate ||
+    hasOldTime ||
     oldVenues.some(v => settings.venue?.includes(v)) ||
     hasOldEvent
   ) {

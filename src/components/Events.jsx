@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styles from './Events.module.css';
 
 const defaultEvents = [
-  { id: 'nikkah', name: 'Nikkah Ceremony', date: 'Saturday, December 5, 2026', time: '11:30 AM – 2:00 PM', venue: 'JB Lawns Auditorium, Puthanangadi' },
+  { id: 'nikkah', name: 'Nikkah Ceremony', date: 'Saturday, December 5, 2026', time: '10:30 AM', venue: 'JB Lawns Auditorium, Puthanangadi' },
 ];
 
 const EventCard = ({ event, index }) => {
